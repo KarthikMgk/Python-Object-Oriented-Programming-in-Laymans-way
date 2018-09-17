@@ -1,0 +1,24 @@
+In this session, We are gonna look at class and instance variables in layman's terms
+
+Getting back to our house example which we were talking in the first part of this series. In this part, We are gonna talk about two 
+important concepts of OOP
+
+1)Class Variables
+2)Instance variable or Object variables (Instance and object are literally the same)
+
+A Class variables is the door through which you would enter your house from outside
+
+A Instance variable or an Object variable is the door through which you enter your own seperate room which inside your house
+
+Consider your family consisits of 4 members and each have a seperate bed room, Everyone will enter the house through the same door(Class variable)
+But after entering the house, 4 people would use 4 different rooms to enter the respective rooms(I'm being a bit explicit here)
+If I open the door of my room, Its exclusive to my room and it doesnt allow me to enter other person's room
+
+POINTS TO REMEBER:
+
+1. Class variable is the main entry door of your home
+2. Instance variable is the entry door for your own seperate room which inside your house
+3. Your door leads only to your room
+
+Lets Code:
+
