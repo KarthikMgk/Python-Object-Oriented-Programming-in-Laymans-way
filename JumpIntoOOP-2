@@ -38,3 +38,22 @@ emp2 = employee('rick', 'johnson', 55)
 print(emp1.pay)                                     # prints pay before increase
 emp1.perc_inc()                                     # increases the pay for the employee and stores it in pay attribute of the emp1 function
 print(emp1.pay)                                     # prints the pay
+
+
+Different implentations:
+
+1) employee.raise_amt = 1.07
+   print(employee.raise_amt)
+   print(emp1.raise_amyt)
+
+ANS: Upon using the above mentioned variation of class variable declaration, We are setting the class variable to 1.07
+which in turn sets all the attributes of the instances to 1.07. In simple terms, Its we set raise_amt = 1.07 globally
+
+
+2) emp1.raise_amt = 1.08
+   print(emp1.raise_amt)
+   print(employee.raise_amt)
+ANS: This implementation sets the value of raise_amt attribute of the emp1 Instance to 1.08 and the Employee.raise_amt to be in its 
+original value of 1.07
+
+
