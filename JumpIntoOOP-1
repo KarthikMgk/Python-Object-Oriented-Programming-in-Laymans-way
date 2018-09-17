@@ -22,6 +22,15 @@ BASICS OF OOP:
 4) variables - different inputs to a function (Like the electricity required to run a computer, a cooler required to keep the processor cool, 
 like the keyboard I used to type this line out)
 
+                                            VARIABLES
+                                                |
+                        CLASS VARIABLE---------- -----------INSTANCE VARIABLES
+                      1. Common to all                     1. Unique to every objects
+                      objects of the class 
+                      of the class
+                      2. Declared outside the function    2. Declared inside every function                          
+                                                
+                                                
 Lets start coding:
 
 class employee():             # This is our house and objects will be details of different employees
