@@ -1,0 +1,56 @@
+#Hi, This is the first tutorail of the python OOP concepts repo and this will explain OOP concepts in layman's terms
+
+OOP - Object oriented programming
+Everything around us are objects of the some type and we have no confusion interacting with them in real life even though there are of
+different type, color, patterns, dimensions etc objects.. Consider a scenario, Your whole house is a singleobject(By single object I mean all
+the stuff in your home are embeeded to your house, literally glued into the walls and floors of the house) and moreover if you want to interact 
+with a single object embedded in your house you will have to change the state of every other object in the house.. not so fun
+
+In our current world, every object is a seperate entity. Example: You dont need to have power if you want to pickup your phone's reciever or 
+you dont need to have a power in the house, to just move a computer
+
+OOP is as simple as that...
+
+HOUSE: Eventhough we have all our stuff inside our house(under a single roof), They are all detached from each other...
+OOP: Eventhough we have all our functions inside our class(under a single roof), They are all detached from each other...
+
+BASICS OF OOP:
+
+1) Class - Literally our house where we keep all our function
+2) Object - Different manifestations of a class.
+3) Function - performs a certain task like the fan gives us air, speaker gives us sound
+4) variables - different inputs to a function (Like the electricity required to run a computer, a cooler required to keep the processor cool, 
+like the keyboard I used to type this line out)
+
+Lets start coding:
+
+class employee():             # This is our house and objects will be details of different employees
+    pass                      # 'pass' says I'm passing this for now
+
+emplooye_X = employee()       # We are saying that employee_X is a part of our class 'employee'
+emplooye_X.firstname = 'Jon'  # 'firstname' is an attribute of the object 'employeeX'. And the value of the attribute is 'Jon'
+emplooye_X.lastname='venus'   # 'lastname' is an attribute of the object 'employeeX'. And the value of the attribute is 'venus'
+
+emplooye_Y = employee()       # We are saying that employee_Y is a part of our class 'employee'
+emplooye_Y.firstname = 'Rick'  # 'firstname' is an attribute of the object 'employeeY'. And the value of the attribute is 'Rick'
+emplooye_Y.lastname='johnson'   # 'lastname' is an attribute of the object 'employeeY'. And the value of the attribute is 'johnson'
+
+print(employeeX.firstname)     # print the first name of the object(employeeX) of the class(employee)
+print(employeeX.lastname)     # print the last name of the object(employeeX) of the class(employee)
+
+
+Eventhough this approach works, but this is not efficent
+
+check this out:
+
+class employee:
+    def __init__(self, firstname, lastname)     #This is called as init method which is called as constructors in other languages, self refers to the function itself
+    self.firstname = firstname                  # we basically say "Whatever object I pass in the function, Replace self with the objectname"( Remember emp1.firstname = 'Jon') There emp1 is the objectname, firstname is the attribute of that object
+    self.lastname - lastname                    # previously for every object we repeated the firstname, lastname, Here we plug in the object name in the place of the self and the init method runs for that object and constructor is a specialf function where instance is created as soon as the function is called
+
+
+emplooye_X = employee('Jon', 'venus')            # Here is the magic instead of redundancy we keep things simple here
+emplooye_Y = employee('rick','johnson')          # 10 lines become 2 lines here
+print(emplooye_Y.firstname)                      # This will print the same thing as the previous one
+
+This is the basics of OOP, If you can understand this with no problem, rest of OOP gonna be easy
