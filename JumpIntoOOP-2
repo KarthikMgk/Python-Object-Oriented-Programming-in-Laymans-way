@@ -16,9 +16,25 @@ If I open the door of my room, Its exclusive to my room and it doesnt allow me t
 
 POINTS TO REMEBER:
 
-1. Class variable is the main entry door of your home
-2. Instance variable is the entry door for your own seperate room which inside your house
+1. Class variable is the main entry door of your home and are declared outside any function
+2. Instance variable is the entry door for your own seperate room which inside your house and are declared inside the function
 3. Your door leads only to your room
 
 Lets Code:
 
+class employee():
+    raise_amt = 1.05                                 #The class variable which is declared outside any function
+    def __init__(self, fname, lname,pay):
+        self.fname = fname                
+        self.lname = lname
+        self.pay = pay
+
+    def perc_inc(self):
+        self.pay = int(self.pay * self.raise_amt)     #If you notice, We are using the class variable inside the function as 'self.raise_amt'
+
+emp1 = employee('Jon', 'venus', 50)
+emp2 = employee('rick', 'johnson', 55)
+
+print(emp1.pay)                                     # prints pay before increase
+emp1.perc_inc()                                     # increases the pay for the employee and stores it in pay attribute of the emp1 function
+print(emp1.pay)                                     # prints the pay
