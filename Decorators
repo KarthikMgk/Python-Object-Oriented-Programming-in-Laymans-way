@@ -1,0 +1,71 @@
+Hi, This post will discuss special methods and decorators in python in a easy to understand way
+
+1) @property decorator - It simply allows us to call a method/function like how we call an attribute
+
+example function and attribute call:
+function call - className.functionName()    EX: print(employee1.fullname())
+attribute call - className.attributeName    EX: print(employee.fname)
+
+'@property' is used before the function declaration to denote the upcoming function is a property method()
+
+
+
+2)setters in python - Whenever we want to update one of our class variables at the end of the code, The updation doesnt take 
+place in some attributes of the class(In our example, your self.email attribute doesnt get updated on updating the fullname at the end)
+Hence we use something called as setters. These setters make sure this updation happens in all part of the code
+
+To create a setter function:
+1) make a tag with @functionName.setter  (Insert your own function in the functionName area). Since I want to update the fullname of 
+my object I use "@fullname.setter"
+
+2)After that, make another function with the same function name and pass in the parameters(In my case its the name)
+
+3)Here I parsed the fullname to first and last name by applying split method on the name variables which I passed in as variable in
+my previous step
+
+4)Im again setting the value of fname and lname to self.fname and self.lname(This is the most important step, This is the setter line)
+
+
+3) Deleters in python:
+Like the setters we saw in the previous paragraph, Here instead of setting, We delete it
+
+To create a deleter function:
+
+1) Similar to what we saw in setters method, Instead of "@fullname.setter" We use "@fullname.deleter"
+
+2)After that, make another function with the same function name and pass in the parameters.Here we have no parameters for deleters
+
+3) We then set the value of the attribute to None(In my case, its "self.fname = None")
+
+class employee:
+    def __init__(self, fname, lname, pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        # self.email = self.fname + "." + self.lname + "@companymail.com"
+
+    @property
+    def fullname(self):
+        return self.fname + self.lname
+
+
+    @fullname.setter
+    def fullname(self, name):
+        fname, lname = name.split(" ")
+        self.fname = fname
+        self.lname = lname
+
+    @fullname.deleter
+    def fullname(self):
+        self.fname = None
+        self.lname = None
+        print('Deleted the names!')
+
+
+    @property
+    def email(self):
+        return self.fname +"." + self.lname + "@companymail.com"
+
+
+employee1 = employee('jack', 'kilby', 5222)
+employee2 = employee('rick', 'jonson', 4333)
