@@ -1,1 +1,27 @@
+In this post, We discuss the topic of regular,class and static methods in python
 
+This is easy, So lets start coding:
+
+
+class employee:
+    def __init__(self, fname, lname,age):
+        self.fname = fname
+        self.lname = lname
+        self.age = age
+
+    def fullname(self):                     #Here we declare regular functions which takes self as an object. 
+        return self.fname + self.lname      #self represents the instance of the class (our instances are emp1,emp2 and whatever we declare)
+
+    @classmethod                            #Keyword @classmethod denotes the following is a classmethod
+    def from_lname(cls):                    #Note that we donot pass in self instead we pass cls(which representes our 'class employee')
+        return cls.lname                    # wherever we used self in regular methods, we use cls(shortform of class since class is reserved)
+
+    @staticmethod                           #Keyword @staticmethod denotes the following is a staticmethod
+    def from_age(age):                      #Note that we neither pass 'cls' or 'self' as arguement coz its neither associated to a class or method
+        return age>50                       #This is a standalone method, But can take the arguements of the class
+
+emp1 = employee('john', 'wick',52)
+emp2 = employee('justin', 'langer', 42)
+
+print(emp1.fullname)
+    
