@@ -1,0 +1,66 @@
+Hi, This post talks about Inheritance and subclassing in Python OOP 
+
+In Layman's terms
+1) Inheritance basically means getting something from other person (You get a pen from your friend, You inherit his pen
+The owner of the pen is your friend, But still you use it)
+
+2) Subclasses are classes that extend(Inherit) another class. From our example, Your friend is the superclass and you are the subclass
+
+Lets code:
+
+class employee:                                             #Our superclass in this example
+    def __init__(self, fname, lname, pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+
+    def email(self):
+        return self.fname+"."+self.lname+"@companymail.com"
+
+    def fullname(self):
+        return self.fname +" "+ self.lname
+
+class developer(employee):                                   #Our subclass in this example
+    def __init__(self, fname, lname, pay, country):
+        super().__init__(fname,lname,pay)
+        self.country = country
+
+class manager(employee):                                     #Our subclass in this example
+    def __init__(self, fname, lname, pay, employees=None):
+        super().__init__(fname,lname,pay)                     #inherits the mentioned attribtued from superclass
+        if employees is None: 
+            self.employees = []
+        self.employees = employees
+
+    def add_employees(self, emp_name):                       #functions of our subclass
+        if emp_name not in self.employees:
+            self.employees.append(emp_name)
+        pass
+
+    def remove_employee(self, emp_name):
+        if emp_name in self.employees:
+            self.employees.remove(emp_name)
+        pass
+
+    def list_employees(self):
+        for emp in self.employees:
+            print("--->", emp.fullname())
+
+employee1 = employee('Jon', 'venus', 80000)
+employee2 = employee('rich', 'ferguson', 65000)
+
+developer1 = developer('corey','schafer',80000, 'python')
+developer2 = developer('jim','anderson',80000, 'java')
+developer3 = developer('dirk','nannes',80000, 'css')
+developer4 = developer('peter','samson',80000, 'html')
+
+manager1 = manager('sophia', 'wilson', 95000,[developer1,developer2])
+manager2 = manager('jessica', 'anderson', 100000,[developer3,developer4])
+
+manager1.list_employees()
+manager1.add_employees(developer3)
+print('\n')
+manager1.list_employees()
+print('\n')
+manager1.remove_employee(developer2)
+manager1.list_employees()
