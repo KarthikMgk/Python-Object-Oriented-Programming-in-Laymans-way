@@ -1,0 +1,25 @@
+Hi, This post will speak on __repr__ and __str__
+
+class employee:
+    def __init__(self, fname, lname, pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        # self.email = self.fname + "." + self.lname + "@companymail.com"
+        
+    def fullname(self):
+        return self.fname + self.lname
+    
+    def __repr__(self):
+        return '{} {}'.format(self.fullname(), self.pay)
+    
+employee1 = employee('jack', 'kilby', 5222)
+employee2 = employee('rick', 'jonson', 4333)
+
+Case1: If No __repr__ is used
+print(employee1)                                  #This prints <__main__.employee object at 0x0000020BF29F6A58>
+
+Case2: If __repr__ is used
+print(employee1)                                  #This prints jack kilby 5222
+
+As simple as that
