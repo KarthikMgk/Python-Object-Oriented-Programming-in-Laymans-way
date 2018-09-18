@@ -23,5 +23,27 @@ class employee:
 emp1 = employee('john', 'wick',52)
 emp2 = employee('justin', 'langer', 42)
 
-print(emp1.fullname)
-    
+
+#By printing the below three lines of code we can see the real differences between these methods
+#The outputs are given below each of the lines
+
+print(emp1.fullname)                          #Our Regular method
+<bound method employee.fullname of <__main__.employee object at 0x000002283C7D66D8>>
+
+EXPLANATION:Look the above line we find "<__main__.employee object at 0x000002283C7D66D8>>" which says
+an object for the class is created at the 0x000002283C7D66D8 address of the harddrive
+
+
+print(emp1.from_lname)                                              #our class method
+#<bound method employee.from_lname of <class '__main__.employee'>>  # Only class employee is referred here, There is no object for the method
+
+EXPLANATION:(Here I have called classmethod on a object which is not its intended use,
+Its basically called on the class. I used object here to simplifiy the concept
+
+
+
+print(emp1.from_age)                                #Our static method, Here neither class or object is created or associated with the method
+<function employee.from_age at 0x000002283C7D0400>  #Its a standalone method
+
+EXPLANATION:Using these functions in your program makes debugging, testing and add functionality to the program much simpler
+as these functions dont affect your main class anyway
