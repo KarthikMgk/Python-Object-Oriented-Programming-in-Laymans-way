@@ -1,0 +1,20 @@
+In this blog, We will know the point of passing keyword 'object' in the class
+
+EX:
+class example(object):
+    pass
+
+The above line is the one which i'm going to clarify in this video...
+What is the need of passing the keyword 'object'???
+
+In Python 2.7, We had two types of styles of classes 
+
+1. classic class
+2. new style class
+
+Python 2.7 would treat your class as a classic type if you didn't pass the 'object' keyword
+And inorder to make use of the new style, usage of keyword 'object' was prescribed
+
+But since the release of python3 its not required to pass in object since python3 for obvious reasons.
+
+If you are using python3, you dont have to pass in the keyword object in your class
